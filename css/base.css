@@ -1,0 +1,16 @@
+@import url(_reset.css);
+
+body {
+    font-family: 'Indie Flower', sans-serif;
+}
+
+header {
+    margin: auto auto;
+    height: 80px;
+    background: linear-gradient(to right, #17e108d8 0%, #A1FF93 65%, #099110 100%);
+
+    display: flex;
+    align-items: center;
+
+    box-shadow: 2px 7px 6px 0px rgba(0,0,0,0.3);
+}
