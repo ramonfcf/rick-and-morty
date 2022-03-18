@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/cabecalho.css">
+    <link rel="stylesheet" href="css/principal.css">
 </head>
 <body>
     <header>
@@ -15,12 +16,23 @@
             <div>
                 <a class="cabecalho__logo" href="index.html"><img src="img/rick-and-morty.png" alt="logo rick and morty"></a>
             </div>
-            <div class="cabecalho__links">
+            <nav class="cabecalho__links">
                 <a href="#">Página Inicial</a>
                 <a href="#">Episódios</a>
                 <a href="#">Personagens</a>
-            </div>
+            </nav>
         </div>
     </header>
 </body>
+    <main>
+        <section class="principal__container">
+            Digite o id do personagem que quer saber mais sobre: <input type="text" id="input-id" placeholder="id"><button id="botao-personagem"type="button">Buscar</button>
+            <table class="tabela__personagem">
+                <tbody class="tabela__personagem-tbody">
+                </tbody>
+            </table>
+        </section>
+    <script src="js/index.js"></script>
+    <script src="js/classes.js"></script>
+    </main>
 </html>
