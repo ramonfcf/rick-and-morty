@@ -14,3 +14,20 @@ class Personagem {
     }
 
 }
+
+class Episodio {
+    id
+    nome
+    noAr
+    episodio
+    personagens
+
+    constructor(id, nome, data, episodio, personagens){
+        this.id = id;
+        this.nome = nome;
+        this.noAr = data;
+        this.episodio = episodio;
+        this.personagens = personagens;
+    
+    }
+}
