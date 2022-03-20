@@ -33,14 +33,16 @@ function buscaPersonagem(id) {
    .then(data => {
 
       let tbody = document.querySelector('.tabela__personagem-tbody');
-      let linha = tbody.insertRow();
-      linha.insertCell(0).innerHTML = `<img class="principal__personagem-imagem" src="https://rickandmortyapi.com/api/character/avatar/${data.id}.jpeg">`
-      linha.insertCell(1).innerHTML = `${data.id} `
-      linha.insertCell(2).innerHTML = `${data.name} `
-      linha.insertCell(3).innerHTML = `${data.status} `
-      linha.insertCell(4).innerHTML = `${data.gender} `
-      linha.insertCell(5).innerHTML = `${data.origin['name']} `
-      
+      let divPerso = document.querySelector('.principal__personagens');
+      divPerso.classList.add('principal__cartao-personagens');
+
+      divPerso.innerHTML = `<img class="principal__personagem-imagem" src="https://rickandmortyapi.com/api/character/avatar/${data.id}.jpeg">
+                           <p>Id: ${data.id}</p>
+                           <p>Nome: ${data.name}</p>
+                           <p>Estado: ${data.status}</p>
+                           <p>Gênero: ${data.gender}</p>
+                           <p>Origem: ${data.origin['name']}`
+
        let personagem = new Personagem (data.id, data.name, data.status, data.gender, data.origin['name']);
          console.log(personagem)  
          return personagem;
