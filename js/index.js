@@ -54,14 +54,15 @@ function buscaEpisodio(id) {
    .then(res => res.json())
    .then(data => {
 
-      let tbody = document.querySelector('.tabela__episodio-tbody');
-      let linha = tbody.insertRow();
-      linha.insertCell(0).innerHTML = `${data.id} `
-      linha.insertCell(1).innerHTML = `${data.name} `
-      linha.insertCell(2).innerHTML = `${data.air_date} `
-      linha.insertCell(3).innerHTML = `${data.episode} `
-      linha.insertCell(4).innerHTML = `${data.characters['name']} `
-      
+      let divEpi = document.querySelector('.principal__episodios');
+      divEpi.classList.add('principal__cartao-episodios');
+
+      divEpi.innerHTML = `<p>Id: ${data.id}</p>
+                          <p>Nome: ${data.name}</p>
+                          <p>Estreia: ${data.air_date}</p>
+                          <p>Episódio: ${data.episode}</p>
+                          <p>Personagens: ${data.characters}`
+s
        let episodio = new Episodio (data.id, data.name, data.air_date, data.episode, data.characters);
          console.log(episodio)  
          return episodio;
