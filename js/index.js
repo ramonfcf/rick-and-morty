@@ -28,11 +28,11 @@ function buscaPersonagem(id) {
       divPerso.classList.add('principal__cartao-personagens');
 
       divPerso.innerHTML = `<img class="principal__personagem-imagem" src="https://rickandmortyapi.com/api/character/avatar/${data.id}.jpeg">
-                           <p>Id: ${data.id}</p>
-                           <p>Nome: ${data.name}</p>
-                           <p>Estado: ${data.status}</p>
-                           <p>Gênero: ${data.gender}</p>
-                           <p>Origem: ${data.origin['name']}`
+                           <p><span class="principal__episodio-descricao">Id:</span> ${data.id}</p>
+                           <p><span class="principal__episodio-descricao">Nome:</span> ${data.name}</p>
+                           <p><span class="principal__episodio-descricao">Estado:</span> ${data.status}</p>
+                           <p><span class="principal__episodio-descricao">Gênero:</span> ${data.gender}</p>
+                           <p><span class="principal__episodio-descricao">Origem:</span> ${data.origin['name']}`
 
        let personagem = new Personagem (data.id, data.name, data.status, data.gender, data.origin['name']);
          console.log(personagem)  
