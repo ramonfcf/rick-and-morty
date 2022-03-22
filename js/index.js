@@ -69,7 +69,7 @@ function buscaEpisodio(id) {
             let texto = '';
    
             personagens.forEach(element => {
-               texto += `${element.name}; `;
+               texto += `${element.name} ${element.id}; `;
             })
 
          divEpi.innerHTML = `<p><span class="principal__episodio-descricao">Id:</span> ${data.id}</p>
