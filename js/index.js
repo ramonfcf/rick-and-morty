@@ -82,5 +82,3 @@ async function buscaNome(id){
 
    console.log(nomePersonagensEpisodio);
 }
-
-buscaNome(1)
