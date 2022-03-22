@@ -1,9 +1,8 @@
 .principal__container {
     width: 65%;
     margin: 0 auto;
-
+    padding: 20px 0;
     text-align: center;
-
 }
 
 #input__id{
@@ -11,11 +10,21 @@
     padding: 2px 6px;
 }
 
-table{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+div{
+    margin: 20px 0;
+}
+
+span{
+    font-weight: 600;
+}
+
+input{
+    padding-left: 6px;
+    outline: none;
+    line-height: 22px;
+    border-radius: 4px;
+    background: rgba(220, 220, 220, 0.644);
+    border: none;
 }
 
 .principal__personagem-imagem {
@@ -27,20 +36,42 @@ table{
 
 .principal__cartao-personagens {
     margin: 6px auto;
-    background-color: rgb(161, 127, 255);
+    background-color: rgba(161, 127, 255, 0.404);
     width: 150px;
     padding: 15px;
     border-radius: 10px;
+
+    box-shadow: 2px 7px 7px 0px rgba(0,0,0,0.3);
 }
 
 .principal__cartao-episodios {
     margin: 6px auto;
-    background-color: rgb(161, 127, 255);
+    background-color: rgb(161, 127, 255, 0.404);
     width: 200px;
     padding: 15px;
     border-radius: 10px;
+
+    box-shadow: 2px 7px 7px 0px rgba(0,0,0,0.3);
 }
 
 .principal__episodio-descricao{
     font-weight: 800;
+    line-height: 22px;
+}
+
+p {
+    line-height: 24px;
+}
+
+button{
+    background-color: #4caf4f96;
+    margin-left: 10px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 6px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
 }

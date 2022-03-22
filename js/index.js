@@ -6,12 +6,14 @@ botaoPersonagen.addEventListener('click', function(){
 
    let personagem = buscaPersonagem(idPersonagem.value);
    
+   idPersonagem.focus();
 })
 botaoEpisodio.addEventListener('click', function(){
    let idEpisodio = document.querySelector('#input-id-episodio');
 
    let episodio = buscaEpisodio(idEpisodio.value);
 
+   idEpisodio.focus();
 })
 
 
