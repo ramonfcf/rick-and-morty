@@ -40,3 +40,7 @@ table{
     padding: 15px;
     border-radius: 10px;
 }
+
+.principal__episodio-descricao{
+    font-weight: 800;
+}
