@@ -4,23 +4,14 @@ let botaoEpisodio = document.querySelector('#botao-episodio');
 botaoPersonagen.addEventListener('click', function(){
   let idPersonagem = document.querySelector('#input-id-personagem');
 
-   let teste = buscaPersonagem(idPersonagem.value);
-
-   console.log(teste)
-
+   let personagem = buscaPersonagem(idPersonagem.value);
    
 })
-
 botaoEpisodio.addEventListener('click', function(){
    let idEpisodio = document.querySelector('#input-id-episodio');
 
-
-   window.alert('teste')
    console.log(idEpisodio.value);
-   let teste = buscaEpisodio(idEpisodio.value);
-
-   console.log(teste)
-
+   let episodio = buscaEpisodio(idEpisodio.value);
 
 
 })
@@ -49,6 +40,8 @@ function buscaPersonagem(id) {
    })
 }
 
+
+
 function buscaEpisodio(id) {
    return fetch(`https://rickandmortyapi.com/api/episode/${id}`)
    .then(res => res.json())
@@ -61,13 +54,33 @@ function buscaEpisodio(id) {
                           <p>Nome: ${data.name}</p>
                           <p>Estreia: ${data.air_date}</p>
                           <p>Episódio: ${data.episode}</p>
-                          <p>Personagens: ${data.characters}`
-s
+                          <p>Personagens: ${nomePersonagens}`
+
        let episodio = new Episodio (data.id, data.name, data.air_date, data.episode, data.characters);
-         console.log(episodio)  
          return episodio;
+
+
    })
 }
 
-/*
-id, nome, data, episodio, personagens)*/
+
+
+async function buscaNome(id){
+   let response = await fetch(`https://rickandmortyapi.com/api/episode/${id}`);
+   let userdata = await response.json();
+
+   let nomes = userdata.characters;
+
+   let nomePersonagensEpisodio = [];
+
+   await nomes.forEach(async element => {
+      let respPersonagem =  await fetch(element);
+      let dadosPersonagem = await respPersonagem.json();
+
+      nomePersonagensEpisodio.push(dadosPersonagem.name)
+   });
+
+   console.log(nomePersonagensEpisodio);
+}
+
+buscaNome(1)
