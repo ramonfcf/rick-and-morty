@@ -50,42 +50,23 @@ function buscaEpisodio(id) {
       let divEpi = document.querySelector('.principal__episodios');
       divEpi.classList.add('principal__cartao-episodios');
 
-      divEpi.innerHTML = `<p>Id: ${data.id}</p>
-      <p>Nome: ${data.name}</p>
-      <p>Estreia: ${data.air_date}</p>
-      <p>Episódio: ${data.episode}</p>`
-
       let episodio = new Episodio (data.id, data.name, data.air_date, data.episode, data.characters);
 
-      let nomes = data.characters;
-      const nomesTeste = [];
-      
-      nomes.forEach(element => {
-        return nomesTeste.push(fetch(element).then(response => response.json()));
-      });
-   
-      Promise.all(nomesTeste)
-         .then(personagens => {
-            let texto = '';
-   
-            personagens.forEach(element => {
-               texto += `${element.name} ${element.id}; `;
-            })
+      let nomesPersonagens = buscaNome(id).then(response => {divEpi.innerHTML = `<p><span class="principal__episodio-descricao">Id:</span> ${data.id}</p>
+      <p><span class="principal__episodio-descricao">Nome:</span> ${data.name}</p>
+      <p><span class="principal__episodio-descricao">Estreia:</span> ${data.air_date}</p>
+      <p><span class="principal__episodio-descricao">Episódio:</span> ${data.episode}</p>
+      <p><span class="principal__episodio-descricao">Personagens:</span> ${response}`
 
-         divEpi.innerHTML = `<p><span class="principal__episodio-descricao">Id:</span> ${data.id}</p>
-         <p><span class="principal__episodio-descricao">Nome:</span> ${data.name}</p>
-         <p><span class="principal__episodio-descricao">Estreia:</span> ${data.air_date}</p>
-         <p><span class="principal__episodio-descricao">Episódio:</span> ${data.episode}</p>
-         <p><span class="principal__episodio-descricao">Personagens:</span> ${texto}`
-   
-         })
+   }
+)
 
          return episodio;
 
    })
 }
 
-/*
+
 
 async function buscaNome(id){
    let response = await fetch(`https://rickandmortyapi.com/api/episode/${id}`);
@@ -93,6 +74,7 @@ async function buscaNome(id){
 
    let nomes = userdata.characters;
 
+   console.log(nomes);
    let nomePersonagensEpisodio = '';
 
    const nomesTeste = [];
@@ -102,18 +84,16 @@ async function buscaNome(id){
    });
 
 
-   Promise.all(nomesTeste)
+   return Promise.all(nomesTeste)
       .then(personagens => {
          let texto = '';
 
          personagens.forEach(element => {
-            texto += `${element.name}, `;
-
+            texto += `${element.name} ${element.id}; `;
          })
 
-         nomePersonagensEpisodio = texto;
+         console.log('teste1', texto)
+         return texto;
+
       })
-      console.log(nomePersonagensEpisodio)
-      return nomePersonagensEpisodio;
 }
-*/
