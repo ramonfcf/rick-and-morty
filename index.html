@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rick and Morty</title>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/cabecalho.css">
-    <link rel="stylesheet" href="css/principal.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Rick and Morty</title>
+   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/cabecalho.css">
+   <link rel="stylesheet" href="css/principal.css">
 </head>
+
 <body>
-    <header>
-        <div class="cabecalho__container">
-            <div>
-                <a class="cabecalho__logo" href="index.html"><img src="img/rick-and-morty.png" alt="logo rick and morty"></a>
-            </div>
-            <nav class="cabecalho__links">
-                <a href="#">Página Inicial</a>
-                <a href="#">Episódios</a>
-                <a href="#">Personagens</a>
-            </nav>
-        </div>
-    </header>
+   <header>
+      <div class="cabecalho__container">
+         <div>
+            <a class="cabecalho__logo" href="index.html"><img src="img/rick-and-morty.png"
+                  alt="logo rick and morty"></a>
+         </div>
+         <nav class="cabecalho__links">
+            <a href="#">Página Inicial</a>
+         </nav>
+      </div>
+   </header>
 </body>
-    <main>
-        <section class="principal__container">
-            <span>Digite o id do personagem: <input type="text" id="input-id-personagem" placeholder="id" onfocus="this.value=''"><button id="botao-personagem"type="button">Buscar</button></span> 
-            <div class="principal__personagens">
-            </div>
-        </section>
-        <section class="principal__container">
-            <span>Digite o id do episódio: <input type="text" id="input-id-episodio" placeholder="id" onfocus="this.value=''"><button id="botao-episodio"type="button">Buscar</button></span>
-           <div class="principal__episodios">
-           </div>
-        </section>
-
-
-    <script src="js/index.js"></script>
-    <script src="js/classes.js"></script>
-    </main>
+<main>
+   <section class="principal__container">
+      <span>Digite o id do personagem: <input type="text" id="input-id-personagem" placeholder="id"
+            onfocus="this.value=''"><button id="botao-personagem" type="button">Buscar</button></span>
+      <div class="principal__personagens">
+      </div>
+   </section>
+   <section class="principal__container">
+      <span>Digite o id do episódio: <input type="text" id="input-id-episodio" placeholder="id"
+            onfocus="this.value=''"><button id="botao-episodio" type="button">Buscar</button></span>
+      <div class="principal__episodios">
+      </div>
+   </section>
+</main>
+<script src="js/index.js"></script>
+<script src="js/classes.js"></script>
 </html>
